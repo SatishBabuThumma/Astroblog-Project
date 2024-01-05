@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Students of the Galaxy</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+#header{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px black;
+}
+#headvid{
+    width: 100%;
+    position: relative;
+    bottom: 150px;
+}
+#tint{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 600px;
+    background-color: black;
+    opacity: 0.6;
+}
+#heading{
+    position: absolute;
+    top: 35%;
+    left: 7%;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px white;
+}
+#bodyofthepage{
+    background-image: linear-gradient(teal,black);
+    width: 100%;
+    height: 1000px;
+}
+#information{
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+#abtheading{
+    text-align: center;
+    padding-top: 30px;
+    color: orange;
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+#abtpara{
+    color: white;
+    text-align: justify;
+    text-indent: 60px;
+    font-size: 18px;
+    word-spacing: 3px;
+    height: 450px;
+    padding: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: rgba(20, 20, 20, 0.51);
+}
+#loc{
+    width: 45%;
+    height: 490px;
+    float: left;
+    position: relative;
+    top: 70px;
+    left: 40px;
+    box-shadow: 0px 0px 10px black;
+    border: 5px groove blue;
+}
+iframe{
+    width: 100%;
+    height: 490px;
+}
+    </style>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+#mainlist{
+    display: flex;
+    list-style: none;
+}
+#navbar{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    background-image: linear-gradient(teal,black);
+    box-shadow: 0px 3px 5px black;
+}
+.mli{
+    border: 1px solid black;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: rgb(1, 58, 39);
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.mli:hover{
+    background-color: rgb(76, 218, 250);
+}
+.sli{
+    background-color: rgb(83, 215, 129);
+    width: 170px;
+    height: 30px;
+    border: 1px solid black;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.5s;
+}
+.sli:hover{
+    background-color: rgb(250, 134, 76);
+}
+a{
+    text-decoration: none;
+}
+#sublist{
+    margin-top: 18px;
+    display: none;
+    transition: 0.5s;
+    list-style: none;
+}
+#sublistobj{
+    color: white;
+    width: 200px;
+    transition: 0.5s;
+}
+#sublistobj:hover #sublist{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <video src="../ASSSET/VIDEOS/Main-Video (2).mp4" autoplay muted loop id="headvid"></video>
+        <div id="tint"></div>
+        <h1 id="heading"> Students Of The Galaxy</h1>
+    </div>
+
+    <div id="navbar">
+        <ul id="mainlist">
+            <a href="./Blog.html"><li class="mli">Home</li></a>
+            <a href="./Information.html"><li class="mli">Info</li></a>
+            <a href="./Objects.html"><li class="mli" id="sublistobj">Objects
+                <ul id="sublist"></a>
+                    <a href="./Objects.html"><li class="sli">Planents</li></a>
+                    <a href="./Stars.html"><li class="sli">Stars</li></a>
+                    <a href="./BlackHole.html"><li class="sli">BlackHole</li></a>
+                    <a href="./Asteroids.html"><li class="sli">Astroids</li></a>
+                    <a href="./Satellite.html"><li class="sli">Satellite</li></a>
+                </ul>
+            </li>
+            <a href="../index.html"><li class="mli">Logout</li></a>
+        </ul>
+    </div>
+    <div id="bodyofthepage">
+        <div id="information">
+            <h1 id="abtheading">About SOG</h1>
+            <p id="abtpara">
+                Beginning in 1946, the National Advisory Committee for Aeronautics (NACA) began experimenting with rocket planes 
+                such as the supersonic Bell X-1. In the early 1950s, there was challenge to launch an artificial satellite for 
+                the International Geophysical Year (1957–1958). An effort for this was the American Project Vanguard. After the
+                Soviet space program's launch of the world's first artificial satellite (Sputnik 1) on October 4, 1957, the attention
+                of the United States turned toward its own fledgling space efforts. The US Congress, alarmed by the perceived threat 
+                to national security and technological leadership (known as the "Sputnik crisis"), urged immediate and swift action;
+                President Dwight D. Eisenhower counseled more deliberate measures. The result was a consensus that the White House
+                forged among key interest groups, including scientists committed to basic research; the Pentagon which had to match
+                the Soviet military achievement; corporate America looking for new business; and a strong new trend in public
+                opinion looking up to space exploration.On January 12, 1958, NACA organized a "Special Committee on Space Technology",
+                headed by Guyford Stever. On January 14, 1958, NACA Director Hugh Dryden published "A National Research Program for Space Technology".An effort for this was the American Project Vanguard. After the
+                Soviet space program's launch of the world's first artificial satellite (Sputnik 1) on October 4, 1957, the attention
+                of the United States turned toward its own fledgling space efforts. The US Congress, alarmed by the perceived threat 
+                to national security and technological leadership (known as the "Sputnik crisis"), urged immediate and swift action;
+                President Dwight D. Eisenhower counseled more deliberate measures. The result was a consensus that the White House
+                forged among key interest groups, including scientists committed to basic research; the Pentagon which had to match
+                the Soviet military achievement; corporate America looking for new business; and a strong new trend in public
+                opinion looking up to space exploration.On January 12, 1958, NACA organized a "Special Committee on Space Technology",
+                headed by Guyford Stever. On January 14, 1958, NACA Director Hugh Dryden published
+                "A National Research Program for Space Technology".
+            </p>
+        </div>
+        <div id="loc">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3832.8915112390005!2d80.17272628650927!3d16.1229120615313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a7d71ec5273d7%3A0x8f07cd9019282f2d!2sDTDC%20GANAPAVARAM%2C%20GUNTUR!5e0!3m2!1sen!2sin!4v1680067720575!5m2!1sen!2sin"></iframe>
+        </div>
+    </div>
+</body>
+</html>

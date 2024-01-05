@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Students Of the Galaxy</title>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+#header{
+    width: 100%;
+    height: 750px;
+    background-image: url(../ASSSET/IMAGES/Astronaut-pngwing.com.png),url(../ASSSET/IMAGES/earth-1756274_960_720.webp);
+    background-size: 550px,120% 900px;
+    background-position: right bottom,-250px 0px;
+    background-repeat: no-repeat;
+    text-align: center;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    transition: background-size 5s,background-position 10s;
+    box-shadow: 10px 10px 10px black;
+}
+#header:hover{
+    background-size: 200px,120% 1100px;
+    background-position: 1000px 90px,-250px 0px;
+    opacity: 1;
+}
+#blackint{
+    width: 100%;
+    height: 850px;
+}
+#headingOfWebpage{
+    padding-top: 300px;
+    opacity: 0;
+    color: white;
+    text-shadow: 2px 2px 3px white;
+    font-size: 50px;
+    transition: font-size 3s, opacity 2s;
+
+}
+#header:hover #headingOfWebpage{
+    opacity: 1;
+    font-size: 68px;
+}
+#navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#cur{
+    width: 100%;
+    height: 250px;
+    background-image: linear-gradient(rgb(0,69,69),black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#headingcur{
+    font-size: 50px;
+    color: white;
+}
+#paracur{
+    font-size: 36px;
+    padding-top: 50px;
+    color: white;
+}
+#imgbutton{
+    width: 180px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 25px;
+    box-shadow: 5px 5px 10px black;
+}
+#vidcontainer{
+    margin-top: 60px;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mainvid{
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px black;
+}
+#threediv{
+    width: 100%;
+    height: 150vh;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.664);
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.in{
+    width: 500px;
+    height: 350px;
+    margin-top: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    border: 2px groove white;
+}
+img{
+    width: 120%;
+    height: 350px;
+}
+    </style>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+#mainlist{
+    display: flex;
+    list-style: none;
+}
+#navbar{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    background-image: linear-gradient(teal,black);
+    box-shadow: 0px 3px 5px black;
+}
+.mli{
+    border: 1px solid black;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: rgb(1, 58, 39);
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.mli:hover{
+    background-color: rgb(76, 218, 250);
+}
+.sli{
+    background-color: rgb(83, 215, 129);
+    width: 170px;
+    height: 30px;
+    border: 1px solid black;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.5s;
+}
+.sli:hover{
+    background-color: rgb(250, 134, 76);
+}
+a{
+    text-decoration: none;
+}
+#sublist{
+    margin-top: 18px;
+    display: none;
+    transition: 0.5s;
+    list-style: none;
+}
+#sublistobj{
+    color: white;
+    width: 200px;
+    transition: 0.5s;
+}
+#sublistobj:hover #sublist{
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+       <div id="blackint">
+         <h1 id="headingOfWebpage">Students Of The Galaxy</h1>
+       </div>
+    </div>
+
+    <div id="navbar">
+        <ul id="mainlist">
+            <a href="./Blog.html"><li class="mli">Home</li></a>
+            <a href="./Information.html"><li class="mli">Info</li></a>
+            <li class="mli" id="sublistobj">Objects
+               <ul id="sublist">
+                   <a href="./Objects.html"><li class="sli">Planents</li></a>
+                   <a href="./Stars.html"><li class="sli">Stars</li></a>
+                   <a href="./BlackHole.html"><li class="sli">BlackHole</li></a>
+                   <a href="./Asteroids.html"><li class="sli">Astroids</li></a>
+                   <a href="./Satellite.html"><li class="sli">Satellites</li></a>
+                </ul>
+            </li>
+            <a href="../index.html"><li class="mli">Logout</li></a>
+        </ul>
+    </div>
+    <div id="body">
+        <div id="cur">
+            <h1 id="headingcur">Are You Interested In Space..?</h1>
+            <p id="paracur">Guardians Of The Galaxy Mode It easy to Learn About Space.</p>
+            <input type="button" value="Click Here" id="imgbutton">
+        </div>
+    </div>
+    <a href="../ASSSET/VIDEOS/Main-Video (2).mp4">
+        <div id="vidcontainer">
+            <video id="mainvid" src="../ASSSET/VIDEOS/Main-Video (2).mp4" muted autoplay loop></video>
+        </div>
+    </a>
+    <div id="threediv">
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/1.jpg"></div>
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/10.jpg"></div>
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/4.jpg"></div>
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/6.jpg"></div>
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/9.jpg"></div>
+        <div class="in"><img src="../ASSSET/IMAGES/Planents/5.jpg"></div>
+    </div>
+</body>
+</html>

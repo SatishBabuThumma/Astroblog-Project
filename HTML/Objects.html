@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 860px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper{
+    width: 100%;
+    height: fit-content; 
+}
+.swiper-slide img{
+    width: 100%;
+    height: 860px;
+   
+}
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+    color: white;
+    font-size: 80px;
+    background-color: transparent;
+    border: none;
+}
+.swiper .swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+/* Image Gallery */
+.maiitems{
+    width: 100%;
+    height: 140vh;
+}
+.img-gallery{
+    width: 80%; 
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    grid-gap: 30px;
+}
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+}
+.img-gallery img:hover{
+    transform: scale(1.1);
+    border-radius: 20px;
+    box-shadow: 0px 32px 75px black;
+
+}
+.full-img{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.full-img img{
+    width: 100%;
+    max-width: 500px;
+
+}
+.full-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+
+}
+.heading{
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    z-index: 6;
+    font-size: 40px;
+    letter-spacing: 3px;
+    white-space: 5px;
+    text-shadow: 5px 5px 10px black;
+}
+#subWindow{
+    width: 80%;
+    height: 80vh;
+    background-color: #000000b5;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 16;
+    border: 2px solid white;
+    box-shadow: inset 0px 0px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imgsub{
+    width: 45%;
+    position: absolute;
+    left: 50px;
+}
+.subhead{
+    color: white;
+    position: absolute;
+    right: 17vw;
+    top: 15vh;
+    font-size: 50px;
+}
+.parasub{
+    color: white;
+    position: absolute;
+    right: 8vw;
+    top: 25vh;
+    text-align: justify;
+    text-indent: 50px;
+    width: 500px;
+    font-size: 20px;
+}
+#closesub{
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+    </style>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+#mainlist{
+    display: flex;
+    list-style: none;
+}
+#navbar{
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    background-image: linear-gradient(teal,black);
+    box-shadow: 0px 3px 5px black;
+}
+.mli{
+    border: 1px solid black;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: rgb(1, 58, 39);
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.mli:hover{
+    background-color: rgb(76, 218, 250);
+}
+.sli{
+    background-color: rgb(83, 215, 129);
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    padding: 10px;
+    box-shadow: 2px 2px 5px black;
+    transition: 0.5s;
+}
+.sli:hover{
+    background-color: rgb(250, 134, 76);
+}
+a{
+    text-decoration: none;
+}
+#sublist{
+    margin-top: 16px;
+    display: none;
+    transition: 0.5s;
+    list-style: none;
+}
+#sublistobj{
+    color: white;
+    width: 200px;
+    transition: 0.5s;
+}
+#sublistobj:hover #sublist{
+    display: block;
+}
+    </style>
+    <script>
+        const swiper = new Swiper('.swiper',{
+    autoplay: {
+        delay: 2000,
+    },
+  loop: true,
+
+  pagination: {
+  el: '.swiper-pagination',
+  clickable: true
+  },
+
+  navigation: {
+      nextE1: '.swiper-button-next',
+      prevE1: '.swiper-button-prev',
+  },
+});
+ 
+
+var fullImgBox = document.getElementById("fullImgBox");
+var fullImg = document.getElementById("fullImg");
+
+function openFullImg(pic)
+{
+  fullImgBox.style.display = "flex";
+  fullImg.src = pic   
+}
+function closeFullImg()
+{
+   fullImgBox.style.display = "none";
+}
+function opensubFullImg(pic)
+{
+  document.getElementById("subWindow").removeAttribute("style");
+  document.getElementById("imgsub").src=pic;
+}
+function closesubFullImg()
+{
+  document.getElementById("subWindow").setAttribute("style","display:none");
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Slider main container -->
+        <div class="heading">
+            <h1 id="mainhead">Gallery Of Planets</h1>
+        </div>
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/1.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/10.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/3.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/4.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/5.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/6.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/7.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/8.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="../ASSSET/IMAGES/Planents/9.jpg" alt=""></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    </div>
+</div>
+<div class="maiitems">
+<div id="navbar">
+    <ul id="mainlist">
+        <a href="./Blog.html"><li class="mli">Home</li></a>
+        <a href="./Information.html"><li class="mli">Info</li></a>
+        <li class="mli" id="sublistobj">Objets
+            <ul id="sublist">
+                <a href="./Objects.html"><li class="sli">Planents</li></a>
+                <a href="./Stars.html"><li class="sli">Stars</li></a>
+                <a href="./BlackHole.html"><li class="sli">BlackHoles</li></a>
+                <a href="./Asteroids.html"><li class="sli">Astroids</li></a>
+                <a href="./Satellite.html"><li class="sli">Satelights</li></a>
+            </ul>
+        </li>
+        <a href="../index.html"><li class="mli">Logout</li></a>
+    </ul>
+</div>
+
+<div class="full-img" id="fullImgBox">
+        <img src="../ASSSET/IMAGES/Planents/5.jpg" id="fullImg">
+        <span onclick="closeFullImg()">X</span>
+    </div>
+    <div class="img-gallery">
+        <img src="../ASSSET/IMAGES/Planents/2.jpg" onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/3.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/4.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/5.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/6.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/7.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/8.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/9.jpg"  onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/10.jpg" onclick="opensubFullImg(this.src)">
+        <img src="../ASSSET/IMAGES/Planents/1.jpg"  onclick="opensubFullImg(this.src)">
+
+</div>
+
+<div id="subWindow" style="display: none;">
+    <img id="imgsub" src="../ASSSET/IMAGES/Earth.jpg">
+    <h1 class="subhead">Planents</h1>
+    <p class="parasub" >
+        A planet is a large, rounded astronomical body that is neither a star nor its remnant. The best available theory of planet formation is the nebular hypothesis, which posits that an interstellar cloud collapses out of a nebula to create a young protostar orbited by a protoplanetary disk. Planets grow in this disk by the gradual accumulation of material driven by gravity, a process called accretion. The Solar System has at least eight planets: the terrestrial planets Mercury, Venus, Earth and Mars, and the giant planets Jupiter, Saturn, Uranus and Neptune. These planets each rotate around an axis tilted with respect to its orbital pole. All planets of the Solar System other than Mercury possess a considerable atmosphere, and some share such features as ice caps, seasons, volcanism, hurricanes, tectonics, and even hydrology.
+    </p>
+
+    <h1 id="closesub" onclick="closesubFullImg()">X</h1>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+</html>
